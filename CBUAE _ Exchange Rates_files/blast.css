@@ -1,0 +1,75 @@
+.blast-box {
+  /* position: fixed; */
+  width: 300px;
+  height: auto;
+  left: -260px;
+  color: #DAAA00;
+  z-index: 9999;
+  transition: 0.5s cubic-bezier(1, 1.48, 0.76, 0.95) left; }
+  /* .blast-icon {
+    position: absolute;
+    width: 40px;
+    line-height: 40px;
+    right: 0;
+    bottom: 0;
+    color: #DAAA00;
+    background: #89D279;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    border: 1px solid #DAAA00;
+    perspective: 1000px;
+    transition: 0.5s ease all;
+    transform-origin: left;
+    transition-delay: 0.5s;
+    z-index: 9999; } */
+  .blast-box .blast-frame {
+    /* position: absolute; */
+    width: 300px;
+    /* width: calc(100% - 20px); */
+    /* height: 300px; */
+    top: 0;
+    left: 0;
+    /* background: #89D279; */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #DAAA00;
+    padding: 20px 5px; }
+  .blast-box .blast-colors {
+    margin: 20px;
+    padding-bottom: 20px; }
+  .blast-box .blast-color {
+    position: relative;
+    float: left;
+    margin: 2px;
+    height: 25px;
+    width: 25px;
+    max-height: 25px;
+    max-width: 25px;
+    background: black;
+    color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid white; }
+  .blast-box .blast-custom-colors {
+    clear: both;
+    padding-top: 40px; }
+  .blast-box input[name="blastCustomColor"] {
+    margin-top: 20px;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0; }
+
+.appear-it {
+  left: 0; }
+
+.flip-it {
+  transform: rotateY(180deg);
+  border-left: none; }
+
+/*# sourceMappingURL=style.css.map */
