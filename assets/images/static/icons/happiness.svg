@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="🔄-Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer/Dark" transform="translate(-1265.000000, -222.000000)" stroke="#FFFFFF" stroke-width="2.2">
+            <g id="Group" transform="translate(1265.000000, 222.000000)">
+                <circle id="Oval" cx="10" cy="10" r="8.9"></circle>
+                <path d="M14,15 C14,14.2626726 13.8005029,13.5719402 13.4525416,12.9788358 C12.757961,11.7949141 11.4718116,11 10,11 C8.52001575,11 7.22776126,11.8037666 6.53594252,12.998594 C6.19509908,13.5872583 6,14.2708453 6,15" id="Oval" stroke-linecap="round" transform="translate(10.000000, 13.000000) rotate(-180.000000) translate(-10.000000, -13.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
