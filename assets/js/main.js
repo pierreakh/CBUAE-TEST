@@ -23,7 +23,11 @@ jQuery(function ($) {
         thisThanksMessage.removeClass('d-flex');
       }, 3000);
     }); //STICKY CHANGE BG COLOR ON SCROLL  
-
+    $('.footer a').hover(function(){
+      $(this).removeClass("text-white-custom")
+      }, function(){
+        $(this).addClass("text-white-custom")
+    });
     if (!$(".sticky-lg-top").hasClass("bg-gradient-custom")) {
       $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
@@ -33,7 +37,10 @@ jQuery(function ($) {
         }
       });
     }
-
+    $(".sticky-lg-top-cursor").click(function(){
+      console.log('abc')
+      $(".sticky-lg-top").toggleClass("sticky-hide")
+    })
     document.addEventListener("DOMContentLoaded", function () {
       // make it as accordion for smaller screens
       if (window.innerWidth < 992) {
@@ -137,6 +144,7 @@ jQuery(function ($) {
     //TOGGLE OPEN BURGER MENU
 
     $(".navbar-toggler").click(function () {
+      $(".header").toggleClass('opened-header')
       $(this).toggleClass("open");
       $("body").toggleClass("overflow-hidden");
     }); //ISSUE ON FIREFOX RELATED TO FLOAT
@@ -365,8 +373,11 @@ jQuery(function ($) {
   var width = $(window).width();
   var swiperInlineHeight, parent, activeH;
 
-  if (width < 1024) {
+  if (width <  1199.98) {
     $("header").removeClass("bg-white-custom");
+    $( "header li.nav-item" ).hover(function() {
+      $("header").removeClass("bg-white-custom");
+    });
     $(".header-search-icon").click(function () {
       $("body").addClass("overflow-hidden");
     });
@@ -394,7 +405,7 @@ jQuery(function ($) {
         }
       });
     });
-  } else if (width >= 1024) {
+  } else if (width >=  1199.98) {
     var counterDrop = 0;
     /* $('.header .dropdown').mouseenter(function(){
         console.log("mouseenter--")
@@ -436,7 +447,8 @@ jQuery(function ($) {
             $("main").addClass("overlay")
         }
     })*/
-
+   
+    
     $('.header .dropdown').hover(function () {
       var dropdownMenu = $(this).children(".dropdown-menu");
 
@@ -472,7 +484,15 @@ jQuery(function ($) {
     $(".header-search .close-btn").click(function () {
       $("header").removeClass("bg-white-custom");
       $("main").removeClass("overlay");
-    }); ////////////// VERTICAL SWIPER HEIGHT FIX //////////
+    }); 
+    // $('.first-fold.hero .swiper-pagination-bullet').click(function(){
+    //   $('.first-fold.hero .swiper-pagination-bullet').removeAttr('data-blast')
+    //   $('.first-fold.hero .swiper-pagination-bullet').removeAttr('style')
+    //   $('.first-fold.hero .swiper-pagination-bullet-active').removeAttr('style')
+    //   $(this).attr('data-blast','bgColor color')
+    // })
+  
+    ////////////// VERTICAL SWIPER HEIGHT FIX //////////
 
     $(window).on('load', function () {
       $(".vSwiper-wrapper").each(function () {
