@@ -3,12 +3,9 @@
     --white: #ffffff;
     --dark: #000000;
     --light: #F0F2F8;
-    /* --navyP: #001E62; */
-    --navyP:#5F5D5E;
+    --navyP: #001E62;
     --navyS: #3154A5;
-    --inactive: #DBDBDB;
-    --navyD: #1B1B1B;
-    --yellow: rgb(218, 170, 0);
-    --black-2:#111111;
-    --dark-grey: #313131
+    --inactive: #DFE3F0;
+    --navyD: #001442;
+    --yellow: #DAAA00;
 }
