@@ -806,7 +806,7 @@
                 <p class="font-r fs-6 text-navy-custom align-self-center">Text size</p>
                 <div class="d-flex w-50 align-self-center">
                     <p class="font-r fs-6 text-navy-custom align-self-center">A-</p>
-                    <input type="range" class="form-range size-change d-inline-block mx-2 align-self-center" min="-2"
+                    <input type="range" class="form-range size-change d-inline-block mx-2 align-self-center" min="0"
                         max="2" id="customRange2">
                     <p class="h2 font-b text-navy-custom align-self-center">A+</p>
                 </div>
@@ -1114,7 +1114,7 @@
                                                                         <path d="M10 0.5V3.5H0V0.5H10Z"
                                                                             fill="#011E62" />
                                                                     </svg></a>
-                                                                <input type="text" value="0" disabled
+                                                                <input type="text" value="0" disabled max="2" min="0"
                                                                     class="text-center disabled-number" />
                                                                 <a href="javascript:;" class="plus"><svg
                                                                         xmlns="http://www.w3.org/2000/svg" width="12"
@@ -1163,7 +1163,7 @@
                                                                         <path d="M10 0.5V3.5H0V0.5H10Z"
                                                                             fill="#011E62" />
                                                                     </svg></a>
-                                                                <input type="text" value="0" disabled
+                                                                <input type="text" value="0" disabled max="4" min="0"
                                                                     class="text-center disabled-number" />
                                                                 <a href="javascript:;" class="plus"><svg
                                                                         xmlns="http://www.w3.org/2000/svg" width="12"
@@ -2072,7 +2072,51 @@
             </div>
         </div>
     </main>
-
+<script>
+     $('.plus').click(function(){
+        input= $(this).closest('.number').children("input")
+        maximum=$(this).closest('.number').children("input").attr( "max" )
+        currentValue=input.val();
+        nextValue=Number(currentValue) + 1
+        console.log(currentValue)
+        if(nextValue == '1'){
+            input.removeClass('disabled-number')
+        }
+        if(currentValue < maximum){
+            currentValue=nextValue
+            input.val(currentValue)
+        }
+        if(currentValue >= maximum){
+            $(this).addClass('disabled-number')
+        }
+        if(currentValue>0){
+            $(this).closest('.number').children(".minus").removeClass('disabled-number')
+        }
+    })
+    $('.minus').click(function(){
+        input= $(this).closest('.number').children("input")
+        minimum=$(this).closest('.number').children("input").attr( "min" )
+        maximum=$(this).closest('.number').children("input").attr( "max" )
+        currentValue=input.val();
+        nextValue=Number(currentValue) - 1
+        console.log(currentValue)
+        if(currentValue == '0'){
+            input.addClass('disabled-number')
+        }
+        if(nextValue > 0){
+            currentValue=nextValue
+            input.val(currentValue)
+        }
+        if(nextValue <= 0){
+            input.addClass('disabled-number')
+            input.val(0)
+            $(this).addClass('disabled-number')
+        }
+        if(currentValue<maximum){
+            $(this).closest('.number').children(".plus").removeClass('disabled-number')
+        }
+    })
+</script>
     <!-- Scripts -->
     <script type="text/javascript" src="../../assets/js/main.js"></script>
     <script type="text/javascript" src="../../assets/js/blast.js"></script>

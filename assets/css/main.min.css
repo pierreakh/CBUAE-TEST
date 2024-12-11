@@ -15530,7 +15530,33 @@ ol.organizational-chart>li>ol>li>ol>li>ol>li>ol>li>div {
  .terms-link{text-decoration: underline;display: inline-block;}
  .custom-form .form-check-input{border: 2px solid #736F6C;border-radius: 2px;}
  .custom-form .submit-button{border-radius: 4px;
-    background: #DADADA;border: none;color: #000000;}
+    background: var(--navyP);border: none;color: #ffffff;}
+.custom-form .submit-button:disabled,.custom-form .submit-button[disabled]{border-radius: 4px;
+        background: #DADADA;border: none;color: #000000;}
+        .custom-form .submit-button .loader {
+            width: 25px;
+            aspect-ratio: 1;
+            display: grid;
+            border-radius: 50%;
+            background:
+              linear-gradient(0deg ,rgb(255 255 255/50%) 30%,#0000 0 70%,rgb(255 255 255/100%) 0) 50%/8% 100%,
+              linear-gradient(90deg,rgb(255 255 255/15%) 30%,#0000 0 70%,rgb(255 255 255/55% ) 0) 50%/100% 8%;
+            background-repeat: no-repeat;
+            animation: l23 1s infinite steps(8);
+          }
+          .custom-form .submit-button  .loader::before
+          {
+            content: "";
+            grid-area: 1 / 1;
+            border-radius: 50%;
+            background: inherit;
+            opacity: 1;
+            transform: rotate(45deg);
+          }
+          @keyframes l23 {
+            100% {transform: rotate(1turn)}
+          }
+          .custom-form .submit-button:disabled .loader,.custom-form .submit-button[disabled] .loader{display: none;}
 .branch-radios input:checked{accent-color: #011E62;}
 .branch-radios input{width: 18px;height: 18px;accent-color: #011E62;flex: none;}
 .branch-item{border-radius: 10px;border: 2px solid #DFE3F0;padding: .5rem 1rem;cursor: pointer;}
@@ -15548,5 +15574,131 @@ ol.organizational-chart>li>ol>li>ol>li>ol>li>ol>li>div {
 .error-modal .btn-close{
     background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMTkuNzA3NCAxOC4yOTI2QzE5LjgwMDQgMTguMzg1NSAxOS44NzQxIDE4LjQ5NTggMTkuOTI0MyAxOC42MTcyQzE5Ljk3NDYgMTguNzM4NiAyMC4wMDA1IDE4Ljg2ODcgMjAuMDAwNSAxOS4wMDAxQzIwLjAwMDUgMTkuMTMxNSAxOS45NzQ2IDE5LjI2MTYgMTkuOTI0MyAxOS4zODNDMTkuODc0MSAxOS41MDQ0IDE5LjgwMDQgMTkuNjE0NyAxOS43MDc0IDE5LjcwNzZDMTkuNjE0NSAxOS44MDA1IDE5LjUwNDIgMTkuODc0MiAxOS4zODI4IDE5LjkyNDVDMTkuMjYxNCAxOS45NzQ3IDE5LjEzMTMgMjAuMDAwNiAxOC45OTk5IDIwLjAwMDZDMTguODY4NiAyMC4wMDA2IDE4LjczODQgMTkuOTc0NyAxOC42MTcxIDE5LjkyNDVDMTguNDk1NyAxOS44NzQyIDE4LjM4NTQgMTkuODAwNSAxOC4yOTI0IDE5LjcwNzZMOS45OTk5NSAxMS40MTM4TDEuNzA3NDUgMTkuNzA3NkMxLjUxOTggMTkuODk1MiAxLjI2NTMxIDIwLjAwMDYgMC45OTk5NDYgMjAuMDAwNkMwLjczNDU4MiAyMC4wMDA2IDAuNDgwMDg2IDE5Ljg5NTIgMC4yOTI0NDYgMTkuNzA3NkMwLjEwNDgwNSAxOS41MTk5IC0wLjAwMDYxMDM0NiAxOS4yNjU0IC0wLjAwMDYxMDM1MiAxOS4wMDAxQy0wLjAwMDYxMDM1NyAxOC43MzQ3IDAuMTA0ODA1IDE4LjQ4MDIgMC4yOTI0NDYgMTguMjkyNkw4LjU4NjIgMTAuMDAwMUwwLjI5MjQ0NiAxLjcwNzU3QzAuMTA0ODA1IDEuNTE5OTMgLTAuMDAwNjEwMzUyIDEuMjY1NDMgLTAuMDAwNjEwMzUyIDEuMDAwMDdDLTAuMDAwNjEwMzUyIDAuNzM0NzA0IDAuMTA0ODA1IDAuNDgwMjA4IDAuMjkyNDQ2IDAuMjkyNTY4QzAuNDgwMDg2IDAuMTA0OTI3IDAuNzM0NTgyIC0wLjAwMDQ4ODI4MSAwLjk5OTk0NiAtMC4wMDA0ODgyODFDMS4yNjUzMSAtMC4wMDA0ODgyODEgMS41MTk4IDAuMTA0OTI3IDEuNzA3NDUgMC4yOTI1NjhMOS45OTk5NSA4LjU4NjMyTDE4LjI5MjQgMC4yOTI1NjhDMTguNDgwMSAwLjEwNDkyNyAxOC43MzQ2IC0wLjAwMDQ4ODI4NiAxOC45OTk5IC0wLjAwMDQ4ODI4MUMxOS4yNjUzIC0wLjAwMDQ4ODI3NiAxOS41MTk4IDAuMTA0OTI3IDE5LjcwNzQgMC4yOTI1NjhDMTkuODk1MSAwLjQ4MDIwOCAyMC4wMDA1IDAuNzM0NzA0IDIwLjAwMDUgMS4wMDAwN0MyMC4wMDA1IDEuMjY1NDMgMTkuODk1MSAxLjUxOTkzIDE5LjcwNzQgMS43MDc1N0wxMS40MTM3IDEwLjAwMDFMMTkuNzA3NCAxOC4yOTI2WiIgZmlsbD0iI0U0Njk2MiIvPgo8L3N2Zz4=") center / 1em auto no-repeat;
     opacity: 1;
+}
+.download-icons img{
+    width: auto!important;
+    height:31px!important
+}
+.sign-in-icon {
+    width: 200px;
+    height: auto;
+}
+.ar .swiper.custom .swiper-button-next {
+   left: 0;
+   right: auto;
+}
+.ar .swiper.custom .swiper-button-next span{
+    left: 30px;
+    right: auto;
+}
+.ar .swiper.custom .swiper-button-next svg, .ar .swiper.custom .swiper-button-prev svg{
+    transform: scaleX(-1);
+}
+.ar .swiper.custom .swiper-button-prev span{
+right: 30px;
+left: auto;
+}
+.toast{
+    position: fixed;
+    bottom: 0;
+    z-index: 1000000000;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.opacity-0{
+    opacity: 0;
+}
+.sign-in-icon{
+    width: 300px
+}
+.modal.custom.show .modal-dialog .modal-content, .modal.custom .modal-dialog .modal-content{
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+.dropdown.custom .dropdown-menu{
+    min-width: 275px;
+}
+.modal.custom.terms .modal-content{
+    height: 300px;
+}
+.modal.custom.terms .modal-body{
+    overflow: scroll;
+}
+.greyed-out{
+    opacity: 0.3;
+    pointer-events: none;
+    filter: grayscale(1);
+
+}
+.green-bg{
+    background-color: #04C7B1;
+}
+.red-bg{
+    background-color: #E46962;
+}
+.orange-bg{
+    background-color: #de7d2f;
+}
+.blue-bg{
+    background-color: #527fd9;
+}
+.circle{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+.chart-tabs .nav-item button.nav-link{
+    background-color: #F6F4F4;
+    color: #A3A3A3;
+    padding: 24px;
+    height: 100%;
+    margin-right: 4px;
+    margin-left: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+}
+.chart-tabs .nav-item button.nav-link.active{
+    background-color: #011E62;
+    color: #ffffff;
+    padding: 24px;
+    height: 100%;
+}
+.chart-tabs .nav-item button.nav-link svg{
+    flex: none;
+}
+.chart-tabs .nav-item button.nav-link.active svg path{
+    stroke: #ffffff;
+}
+
+@media only screen and (max-width: 991px){
+    .chart-tabs{
+        overflow-x: scroll;
+    }
+}
+.rectangle{
+    width: 16px;
+    height: 16px;
+}
+.rect1{
+    background-color: #011E62;
+}
+.rect2{
+    background-color: #0F399B;
+}
+.rect3{
+    background-color: #2B5AC8;
+}
+.rect4{
+    background-color: #5787F5;
+}
+.rect5{
+    background-color: #A9C2FF;
+}
+.legend{
+    color: #474747;
+    font-size: 12px;
+    font-weight: 500;
 }
 /*# sourceMappingURL=main.css.map */
